@@ -1,0 +1,97 @@
+/* 
+Project Name: Monthly Resolutions
+Client: One Month
+Author: Mustapha Moshood
+*/
+
+
+/*----------------------------------------------------------------------------- 
+01=BASE   
+-----------------------------------------------------------------------------*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+.clear {
+	clear: both;
+}
+
+
+/*----------------------------------------------------------------------------- 
+02=LAYOUT  
+-----------------------------------------------------------------------------*/
+
+
+section {
+     background-color: white;
+     padding: 20px;
+     width: 600px;
+     float: left;
+
+}
+body {
+     background: url(../images/notebook.png);
+     background-color: #6d6d6d;
+     color: #000000;
+     font-family: 'lato', sans-serif;
+     line-height: 1.7;
+     font-style: 100%;
+     width: 1000px;
+     padding: 30px;
+     margin: 0 auto;
+     
+
+     
+}
+
+aside {
+     float: left;
+     background-color: white;
+     padding: 20px;
+     width: 300px;
+     margin: 0px 20px 20px 20px ;
+
+}
+footer {
+    padding-top: 5px;
+     
+}
+
+/*----------------------------------------------------------------------------- 
+03=MAIN  
+-----------------------------------------------------------------------------*/
+#post_1 {
+     margin-top: 40px;
+}
+
+#post_2 {
+     margin-top: 80px;
+}
+
+#post_3 {
+     margin-top: 80px;
+}
+
+h4 {
+     margin-top: 0px;
+}
+h1 {
+     margin-bottom: 0px;
+}
+
+a {
+     text-decoration: none;
+     color: red;
+}
+
+#pics {
+
+     border-radius: 800px;
+}
+
+
+
