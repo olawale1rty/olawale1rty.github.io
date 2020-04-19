@@ -1,46 +1,112 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Happy Birthday Alexis!</title>
-    <meta name="description" content="Happy Birthday Alexis!">
+    <meta charset="utf-8">
+    <title>Happy Birthday Mummy!</title>
+    <meta name="description" content="Happy Birthday Mummy!">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/small.css" media="(max-width: 630px)">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700|Lobster' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
+    <canvas id="canvas"> </canvas>
     <div class="container">
       <div class = "hero">
-        <img src="images/hero-image.png" alt="Dr. Bubbles">
+        <img src="images/hero.gif" alt="action_pics">
       </div>
       <div class = "intro">
-        <h1>Alexis's Birthday Party!</h1>
+        <h1>Happy Birthday Mummy !!!</h1>
         <div class = "her">
-          <img src="images/bubble-bottle.png" alt="Bubbles">
+          <img src="images/mum.jpg" alt="mum_pics">
         </div>
-        <p>Alexis' birthday is coming up! We hope you intend to come to our magical party for a most lovely friend. There will be 99 bottles of wine, a dozen in attendance, and if we're lucky, Dr. Bubbles (in special appearance)! </p>
+        <p>Mummy is the best. Thank you ma for all you have done for me, God will continue to bless you and increase you ma in all your endeavours.</p>
 
-        <p>You know when to go out, you know when to stay in. Come to Schiller's this Thursday, and party like it's Berlin! </p>
+        <p>I love you mum. It is a great thing to have you around ma, we appreciate all your efforts on our lifes. </p>
       </div>
       <div class = "contact">
-        <h2>Thursday, November 12th!</h2> 
-        <div class = "he">
-          <img src="images/unicorn.png" alt="unicorn">
+        <div class="video">
+                
         </div>
-        <p>Starts promptly at <time>20:00</time></p>
-
-        <p>Schiller's Liquor Bar! 
-        131 Rivington St New York, NY 1002</p>
-
-        <p>Coming? Email yes@happybirthdaydude.lol</p> 
-
-      </div>
-      <div class = "map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12095.715959922774!2d-73.98471989416502!3d40.71957968260492!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6455254f2d644a86!2sSchiller&#39;s+Liquor+Bar!5e0!3m2!1sen!2sus!4v1446874459782" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-
+         <button class="btn" >Go</button>
+         <h3>Courtesy: Your Children<h3>
       
     </div>
   </body>
+  <script>
+    let HeartsBackground = {
+      heartHeight: 60,
+      heartWidth: 64,
+      hearts: [],
+      heartImage: 'https://cdn.pixabay.com/photo/2012/04/18/15/18/heart-37317_960_720.png',
+      maxHearts: 8,
+      minScale: 0.4,
+      draw: function() {
+        this.setCanvasSize();
+        this.ctx.clearRect(0, 0, this.w, this.h);
+        for(let i = 0; i < this.hearts.length; i++) {
+          let heart = this.hearts[i];
+          heart.image = new Image();
+          heart.image.style.height = heart.height;
+          heart.image.src = this.heartImage;
+          this.ctx.globalAlpha = heart.opacity;
+          this.ctx.drawImage (heart.image, heart.x, heart.y, heart.width, heart.height);
+        }
+        this.move();
+      },
+      move: function() {
+        for(let b = 0; b < this.hearts.length; b++) {
+          let heart = this.hearts[b];
+          heart.y += heart.ys;
+          if(heart.y > this.h) {
+            heart.x = Math.random() * this.w;
+            heart.y = -1 * this.heartHeight;
+          }
+        }
+      },
+      setCanvasSize: function() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.w = this.canvas.width;
+        this.h = this.canvas.height;
+      },
+      initialize: function() {
+        this.canvas = $('#canvas')[0];
+        if(!this.canvas.getContext)
+          return;
+        this.setCanvasSize();
+        this.ctx = this.canvas.getContext('2d');
+        for(let a = 0; a < this.maxHearts; a++) {
+          let scale = (Math.random() * (1 - this.minScale)) + this.minScale;
+          this.hearts.push({
+            x: Math.random() * this.w,
+            y: Math.random() * this.h,
+            ys: Math.random() + 1,
+            height: scale * this.heartHeight,
+            width: scale * this.heartWidth,
+            opacity: scale
+          });
+        }
+        setInterval($.proxy(this.draw, this), 30);
+      }
+    };
+    $(document).ready(function(){
+      HeartsBackground.initialize();
+    });
+
+    //video display
+
+    var Ui = {};
+
+    Ui.handleSubmitClick = () => {
+        document.querySelector(".btn").addEventListener('click',function(){
+            let videoResult = document.querySelector('.video');
+            videoResult.innerHTML = '<iframe width="300px" height"300px"  src="https://www.youtube.com/embed/LnHREJaGSyE?autoplay=1"></iframe>';
+        });
+
+    };
+    Ui.handleSubmitClick();
+  </script>
 </html>

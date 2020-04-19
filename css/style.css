@@ -4,7 +4,7 @@
 
 
 body {
-  background: url('../images/space-background.png');
+  background: url('../images/bg3.jpg');
   background-color: #DDD;
   font-family: 'Open Sans', arial, sans-serif;
   background-size: cover;
@@ -59,7 +59,13 @@ h1 {
 h2 {
   font-size: 32px;
 }
-
+h3 {
+  font-family: 'Lobster', cursive;
+  color: #e22f8f;
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 32px;
+}
 /*
  * Container Styles
 */
@@ -78,6 +84,11 @@ h2 {
 }
 .her {
   float: right;
+  border-radius: 5px;
+}
+.her img {
+  border-radius: 5px;
+  float: right;
 }
 .he {
   float: left;
@@ -86,6 +97,7 @@ h2 {
 
 .intro {
   background: rgb(255, 254, 254);
+  
 }
 .intro, .contact {
   padding: 40px;
@@ -95,6 +107,27 @@ h2 {
 }
 
 .contact {
-  background: #DDD;
+  /*background: #e22f8f;*/
+  background: black;
+
+
+}
+button{
+  cursor: pointer;
+  width: 20%;
+  display: inline-block;
+  padding: 20px;
+  background-color: #e22f8f;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-family: 'Lobster', cursive;  
+  margin: 20px 200px;
+
+}
+.video {
+  margin: 20px 120px;
 }
 
