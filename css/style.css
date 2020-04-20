@@ -73,6 +73,8 @@ h3 {
 .container {
   width: 600px;
   margin: 100px auto;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.8);
   
  
 }
@@ -102,6 +104,7 @@ h3 {
 .intro, .contact {
   padding: 40px;
 }
+
 .hero {
   line-height: 0;
 }
@@ -114,7 +117,7 @@ h3 {
 }
 button{
   cursor: pointer;
-  width: 20%;
+  width: auto;
   display: inline-block;
   padding: 20px;
   background-color: #e22f8f;
@@ -124,10 +127,12 @@ button{
   border: 1px solid white;
   border-radius: 5px;
   font-family: 'Lobster', cursive;  
-  margin: 20px 200px;
+  margin: 20px 225px;
 
 }
 .video {
-  margin: 20px 120px;
+  width: auto;
+  margin: 20px 50px;
 }
+
 

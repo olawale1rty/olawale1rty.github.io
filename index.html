@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Happy Birthday Mummy!</title>
     <meta name="description" content="Happy Birthday Mummy!">
-    <link rel="stylesheet" href="css/reset.css">
+   <!--  <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/small.css" media="(max-width: 630px)">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700|Lobster' rel='stylesheet' type='text/css'>
@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <canvas id="canvas"> </canvas>
+    <canvas id="canvas"> Your browser does not support the canvas. </canvas>
     <div class="container">
       <div class = "hero">
         <img src="images/hero.gif" alt="action_pics">
@@ -22,9 +22,9 @@
         <div class = "her">
           <img src="images/mum.jpg" alt="mum_pics">
         </div>
-        <p>Mummy is the best. Thank you ma for all you have done for me, God will continue to bless you and increase you ma in all your endeavours.</p>
+        <p>Look back on our years growing up, one thing is constant. That is your love for all of us. We love you with all of our hearts. happy birthday, dear mother!</p>
 
-        <p>I love you mum. It is a great thing to have you around ma, we appreciate all your efforts on our lifes. </p>
+        <p>Mummy is the best. Thank you ma for all you have done for us, God will continue to bless you and increase you in all your endeavours. We love you mum, it is a great thing to have you around ma, we appreciate all your efforts on our lifes. </p>
       </div>
       <div class = "contact">
         <div class="video">
@@ -32,8 +32,7 @@
         </div>
          <button class="btn" >Go</button>
          <h3>Courtesy: Your Children<h3>
-      
-    </div>
+      </div>
   </body>
   <script>
     let HeartsBackground = {
@@ -67,8 +66,12 @@
         }
       },
       setCanvasSize: function() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        if (window.innerWidth <= 630) {
+          this.canvas.width = 400;
+        }else{
+          this.canvas.width = window.innerWidth;
+        }
+        this.canvas.height = 400;
         this.w = this.canvas.width;
         this.h = this.canvas.height;
       },
@@ -103,7 +106,7 @@
     Ui.handleSubmitClick = () => {
         document.querySelector(".btn").addEventListener('click',function(){
             let videoResult = document.querySelector('.video');
-            videoResult.innerHTML = '<iframe width="300px" height"300px"  src="https://www.youtube.com/embed/LnHREJaGSyE?autoplay=1"></iframe>';
+            videoResult.innerHTML = '<iframe  width="420" height="159" src="https://www.youtube.com/embed/LnHREJaGSyE?autoplay=1"></iframe>';
         });
 
     };
